@@ -1,0 +1,46 @@
+@use "../../utils/colors";
+@use "../../utils/global";
+
+@media (max-width: 768px) {
+    .navigation__container {
+        display: none;
+    }
+}
+
+.navigation {
+    &__list {
+        display: flex;
+        column-gap: 20px;
+    }
+    &__item {
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding-top: 17px;
+    }
+    &__link {
+        color: var(--white-color);
+        &--active {
+            position: relative;
+            color: var(--yellow-color);
+            &::after {
+                content: "";
+                position: absolute;
+                width: 50px;
+                border-bottom: 3px solid var(--yellow-color);
+                border-radius: 2px;
+                padding-top: 10px;
+                display: block;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .navigation__list {
+        column-gap: 40px;
+    }
+    .navigation__item {
+        font-size: 14px;
+    }
+}

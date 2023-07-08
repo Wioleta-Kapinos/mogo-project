@@ -1,9 +1,130 @@
 @use "../../utils/colors";
 @use "../../utils/global";
 
+.logo {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--white-color);
+    padding-left: 20px;
+    &:hover,
+    &:focus {
+        color: var(--light-blue-color);
+    }
+}
+
 .header {
     background-color: var(--dark-grey-color);
-    background-image: linear-gradient(to bottom, var(--linear-color), var(--light-yellow)), url("../../images/image5.jpg");
+    background-image: linear-gradient(to bottom, var(--linear-color), var(--light-yellow)), url("../../images/image@1x.png");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: 50% 50%;
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 14px 30px 14px;
+    }
+    &__button {
+        fill: var(--white-color);
+        padding-right: 10px;
+        background: none;
+        border: none;
+        &:hover,
+        &:focus {
+            fill: var(--black-color);
+        }
+    }
+}
+
+.title__container {
+    text-align: center;
+    padding-top: 30px;
+    color: var(--white-color);
+}
+
+.title__header {
+    font-weight: 700;
+    font-size: 40px;
+    &--accent {
+        font-family: "Kaushan Script", sans-serif;
+        font-size: 25px;
+        font-weight: 200;
+    }
+}
+
+.title__button {
+    font-weight: 700;
+    font-size: 12px;
+    color: var(--white-color);
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border: 3px solid var(--white-color);
+    background: none;
+    margin: 30px 0 40px 0;
+    cursor: pointer;
+    &:hover,
+    &:focus {
+        background-color: var(--light-blue-color);
+        border-color: var(--light-blue-color);
+    }
+}
+
+@media (min-width: 768px) {
+    .header {
+        height: 450px;
+        &__container {
+            margin: 0 50px;
+        }
+        &__button {
+            display: none;
+        }
+    }
+
+    .logo {
+        padding-left: 40px;
+    }
+
+    .title__header {
+        font-size: 60px;
+        &--accent {
+            font-size: 35px;
+        }
+    }
+
+    .title__button {
+        margin: 40px 0 50px 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header {
+        height: 750px;
+        &__box {
+            margin: 0 30px;
+        }
+    }
+    
+    .logo {
+        padding-left: 100px;
+    }
+
+    .title__header {
+        font-size: 100px;
+        &--accent {
+            font-size: 52px;
+        }
+    }
+    
+    .title__button {
+        font-size: 14px;
+        padding: 10px 25px;
+        margin: 80px 0 50px 0;
+    }
+}
+
+@media screen and (min-device-pixel-ratio:2),
+    screen and (min-resolution: 192dpi),
+    screen and (min-resolution: 2dppx) {
+        .header {
+            background-image: linear-gradient(to bottom, var(--linear-color), var(--light-yellow)), url("../../images/image@2x.png");
+        }
 }
