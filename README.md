@@ -1,1 +1,1 @@
-# mogo-project
+mogo-project - recruitment task
